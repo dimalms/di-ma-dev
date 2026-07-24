@@ -135,12 +135,7 @@
         "commands: <span class='t-sign'>help</span> whoami neofetch ls cd &lt;page&gt; uptime clear sudo exit"
       );
     },
-    whoami() {
-      print(
-        "Dima — M.Sc. computer science student, builds things where software meets hardware."
-      );
-      whoamiVisitor();
-    },
+    whoami: whoamiVisitor,
     neofetch,
     ls() {
       print(
