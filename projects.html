@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Dima</title>
+  <meta name="description" content="Projects by me :)">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-fx" aria-hidden="true">
+    <img class="bg-img" src="bg-liquid.jpg" alt="">
+    <div class="bg-overlay"></div>
+  </div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <div class="wrap">
+      <a class="nav-logo" href="index.html"><span class="prompt-sign">❯</span> dima</a>
+      <ul class="nav-links">
+        <li><a href="index.html">about</a></li>
+        <li><a href="projects.html" class="active">projects</a></li>
+        <li><a href="skills.html">skills</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <h2 class="section-title">projects</h2>
+    <p class="muted reveal" style="margin-bottom: 2rem;">
+      A mix of university, internship and personal projects.
+    </p>
+
+    <div class="card-grid">
+      <article class="card reveal">
+        <h3>Bachelor thesis — AI image perception</h3>
+        <p>
+          Studied subjective image perception and evaluated specialized AI models
+          (transformers and residual networks) for analyzing visual content.
+          Graded 1.3 — a conference paper based on it is in the works.
+        </p>
+        <div class="tags">
+          <span class="tag">pytorch</span>
+          <span class="tag">transformers</span>
+          <span class="tag">resnet</span>
+          <span class="tag">python</span>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <h3>Cumulocity IoT web platform</h3>
+        <p>
+          Redesigned and implemented an IoT web platform during my internship at
+          Novatec Consulting — interactive Angular widgets for video streaming,
+          device control and user interaction, plus automation logic with the
+          Apama builder. The live video came from a webcam-streaming application
+          I built on a Raspberry Pi in Python, feeding real-time video into a
+          platform widget.
+        </p>
+        <div class="tags">
+          <span class="tag">angular</span>
+          <span class="tag">cumulocity</span>
+          <span class="tag">typescript</span>
+          <span class="tag">python</span>
+          <span class="tag">raspberry pi</span>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <h3>Live video encoding pipeline</h3>
+        <p>
+          Analyzed and optimized video encoding for live streaming using GStreamer
+          and Python.
+        </p>
+        <div class="tags">
+          <span class="tag">gstreamer</span>
+          <span class="tag">python</span>
+          <span class="tag">video</span>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <h3>Autonomous system with ROS &amp; LiDAR</h3>
+        <p>
+          Programmed an autonomous system with ROS and LiDAR on an NVIDIA
+          Jetson Nano.
+        </p>
+        <div class="tags">
+          <span class="tag">ros</span>
+          <span class="tag">lidar</span>
+          <span class="tag">jetson nano</span>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <h3>Full-stack web app</h3>
+        <p>
+          Full-stack web development with an SCSS frontend and an Express.js
+          backend.
+        </p>
+        <div class="tags">
+          <span class="tag">scss</span>
+          <span class="tag">express.js</span>
+          <span class="tag">node</span>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <h3>This website</h3>
+        <p>
+          No framework, no build step — served by
+          Apache on a Raspberry Pi Zero 2 W behind a Cloudflare Tunnel, with
+          GSAP scroll animations, an auto-deploy pipeline via systemd timer,
+          and live Pi vitals in the footer.
+        </p>
+        <div class="tags">
+          <span class="tag">html/css/js</span>
+          <span class="tag">gsap</span>
+          <span class="tag">cloudflare tunnel</span>
+          <span class="tag">raspberry pi</span>
+        </div>
+        <a class="card-link" href="https://github.com/dimalms/di-ma-dev" target="_blank" rel="noopener">source →</a>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span><span class="status-dot"></span>served from a raspberry pi zero 2 w<span id="pi-vitals"></span></span>
+      <span>© 2026 Dimitri Majer</span>
+      <span class="credit">bg: <a href="https://www.magnific.com/free-photo/abstract-heavy-azure-haze-liquid_4251077.htm#fromView=keyword&page=1&position=0&uuid=50233262-d881-4d51-a548-5ae1bffae1d2&query=Phthalo+green+wallpaper" target="_blank" rel="noopener">Image by magnific</a></span>
+      <span><button class="term-open" type="button">❯ terminal</button></span>
+    </div>
+  </footer>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="vendor/lenis.min.js"></script>
+  <script src="script.js"></script>
+  <script src="terminal.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dimitri Majer — Profile</title>
+  <meta name="description" content="Personal profile of Dimitri Majer — self-hosted on a Raspberry Pi Zero 2 W">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-fx" aria-hidden="true">
+    <img class="bg-img" src="bg-liquid.jpg" alt="">
+    <div class="bg-overlay"></div>
+  </div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <div class="wrap">
+      <a class="nav-logo" href="index.html"><span class="prompt-sign">❯</span> dima</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">about</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="skills.html">skills</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="hero">
+      <p class="hero-prompt"><span class="p-user">dima</span>@pizero <span class="p-path">~</span> <span class="prompt-sign">❯</span> whoami</p>
+      <h1>Di<span class="accent">Ma</span></h1>
+      <p class="typed-line" data-type='["M.Sc. computer science student @ OTH Regensburg.", "B.Eng. interactive systems / IoT.", "Served fresh from a Raspberry Pi Zero 2 W."]'>
+        <span class="typed-text"></span><span class="cursor"></span>
+      </p>
+      <div class="hero-actions">
+        <a class="btn solid" href="projects.html">view projects</a>
+        <a class="btn" href="contact.html">get in touch</a>
+      </div>
+      <span class="scroll-hint">▼ scroll</span>
+    </section>
+
+    <section>
+      <h2 class="section-title reveal">about me</h2>
+      <div class="about-layout">
+        <div class="avatar-frame reveal">
+          <img class="avatar" src="avatar.png" alt="Portrait of me :)">
+        </div>
+        <div class="about-text reveal">
+          <p>
+            Hi, I'm Dima — a computer science master's student at OTH Regensburg,
+            with a B.Eng. in Interactive Systems / IoT from TH Deggendorf. I like the
+            space where software meets hardware: IoT platforms, video pipelines,
+            autonomous systems — and self-hosted setups like this very page.
+          </p>
+          <p>
+            Born in Kazakhstan, raised in the Bavarian Forest, now settled in
+            Regensburg. When I'm not studying, I tutor math, physics and English.
+          </p>
+          <ul class="fact-list">
+            <li>based in: <span class="accent">Regensburg, DE</span></li>
+            <li>currently: <span class="accent">M.Sc. computer science @ OTH Regensburg</span></li>
+            <li>interests: <span class="accent">IoT · ML · self-hosting · linux ricing</span></li>
+            <li>shell: <span class="accent">fish · Hyprland</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top: 4rem;">
+      <h2 class="section-title reveal">timeline</h2>
+      <ol class="timeline">
+        <li class="tl-item reveal">
+          <span class="tl-year">dec 1998</span>
+          <h3>Born in Shetysai, Kazakhstan</h3>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-year">apr 2003</span>
+          <h3>Moved to Germany</h3>
+          <p>Bavarian Forest — Böbrach, later Teisnach</p>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-year">jun 2018</span>
+          <h3>A-levels</h3>
+          <p>Dominicus-von-Linprun-Gymnasium, Viechtach</p>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-year">nov 2018 - feb 2019</span>
+          <h3>Temp work at Pfleiderer Teisnach</h3>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-year">2019</span>
+          <h3>Traveling</h3>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-year">oct 2019</span>
+          <h3>Started B.Eng. Interactive Systems / IoT</h3>
+          <p>Deggendorf Institute of Technology</p>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-year">mar 2022</span>
+          <h3>Tutor at Schülerhilfe</h3>
+          <p>Math, physics and English — ongoing</p>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-year">aug 2022 - jan 2023</span>
+          <h3>Internship at Novatec Consulting</h3>
+          <p>IoT web platform with Angular &amp; Cumulocity, Raspberry Pi webcam streaming, Apama automation.</p>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-year">nov 2023</span>
+          <h3>Moved to Deggendorf</h3>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-year">mar 2025</span>
+          <h3>B.Eng. completed</h3>
+          <p>Overall grade 2.1 · bachelor thesis graded 1.3</p>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-year">2025</span>
+          <h3>Downtime — personal projects</h3>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-year">mar 2026</span>
+          <h3>Moved to Regensburg - started M.Sc. Computer Science</h3>
+          <p>OTH Regensburg.</p>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span><span class="status-dot"></span>served from a raspberry pi zero 2 w<span id="pi-vitals"></span></span>
+      <span>© 2026 Dimitri Majer</span>
+      <span class="credit">bg: <a href="https://www.magnific.com/free-photo/abstract-heavy-azure-haze-liquid_4251077.htm#fromView=keyword&page=1&position=0&uuid=50233262-d881-4d51-a548-5ae1bffae1d2&query=Phthalo+green+wallpaper" target="_blank" rel="noopener">Image by magnific</a></span>
+      <span><button class="term-open" type="button">❯ terminal</button></span>
+    </div>
+  </footer>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="vendor/lenis.min.js"></script>
+  <script src="script.js"></script>
+  <script src="terminal.js"></script>
+</body>
+</html>
