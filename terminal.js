@@ -63,6 +63,73 @@
     print(`<pre>${out}</pre>`);
   }
 
+  // --- whoami: client-side visitor read-out ------------------------------
+  // Everything here comes from the browser reflecting its own state back
+  // to the visitor — no network calls, no third parties, nothing stored.
+  function detectBrowserOS() {
+    const ua = navigator.userAgent;
+    let browser = "an unidentified browser";
+    if (/Edg\//.test(ua)) browser = "Edge";
+    else if (/Chrome\//.test(ua) && !/Chromium/.test(ua)) browser = "Chrome";
+    else if (/Firefox\//.test(ua)) browser = "Firefox";
+    else if (/Safari\//.test(ua) && !/Chrome/.test(ua)) browser = "Safari";
+    else if (/Chromium/.test(ua)) browser = "Chromium";
+
+    let os = "an unidentified OS";
+    if (/Windows/.test(ua)) os = "Windows";
+    else if (/Mac OS X/.test(ua)) os = "macOS";
+    else if (/Android/.test(ua)) os = "Android";
+    else if (/iPhone|iPad/.test(ua)) os = "iOS";
+    else if (/Linux/.test(ua)) os = "Linux";
+
+    return { browser, os };
+  }
+
+  function detectAnomalies(browser) {
+    const flags = [];
+    if (navigator.webdriver) flags.push("navigator.webdriver is set (automation?)");
+    if (/HeadlessChrome/.test(navigator.userAgent)) flags.push("UA reports HeadlessChrome");
+    if (window.callPhantom || window._phantom) flags.push("PhantomJS artifacts present");
+    if (window.__nightmare) flags.push("Nightmare.js artifacts present");
+    if (document.__selenium_unwrapped || document.__webdriver_evaluate)
+      flags.push("Selenium artifacts present");
+    if (navigator.plugins.length === 0 && !/Mobi/.test(navigator.userAgent))
+      flags.push("zero plugins (unusual for a desktop browser)");
+
+    const hasChromeObj = !!window.chrome;
+    if (browser === "Chrome" && !hasChromeObj) flags.push("claims Chrome, but window.chrome is missing");
+    if (browser === "Safari" && hasChromeObj) flags.push("claims Safari, but window.chrome exists");
+    if (browser === "Firefox" && hasChromeObj) flags.push("claims Firefox, but window.chrome exists");
+    return flags;
+  }
+
+  function whoamiVisitor() {
+    const { browser, os } = detectBrowserOS();
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "unknown";
+    const time = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    const lang = navigator.language || "unknown";
+    const screen_ = `${window.screen.width}x${window.screen.height}`;
+    const anomalies = detectAnomalies(browser);
+
+    const row = (k, v) => `<span class="t-sign">${k}</span>: ${v}\n`;
+    let out =
+      row("browser", `${esc(browser)} on ${esc(os)}`) +
+      row("language", esc(lang)) +
+      row("timezone", `${esc(tz)} · local time ${time}`) +
+      row("screen", screen_) +
+      row("vpn", "can't tell from here — that's network-layer info, browser JS has no visibility into it") +
+      row(
+        "automation",
+        anomalies.length
+          ? `<span class="t-err">${anomalies.map(esc).join("; ")}</span> (heuristics, not proof)`
+          : "nothing obviously off"
+      );
+    print(`<pre>${out}</pre>`, "");
+    print(
+      "<span class='t-muted'>all of the above is read from your own browser — nothing left this page.</span>"
+    );
+  }
+
   const commands = {
     help() {
       print(
@@ -73,6 +140,7 @@
       print(
         "Dima — M.Sc. computer science student, builds things where software meets hardware."
       );
+      whoamiVisitor();
     },
     neofetch,
     ls() {
