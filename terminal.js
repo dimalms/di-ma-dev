@@ -172,10 +172,12 @@
     if (!overlay) build();
     overlay.classList.add("visible");
     input.focus();
+    window.__lenis?.stop();
   }
 
   function close() {
     if (overlay) overlay.classList.remove("visible");
+    window.__lenis?.start();
   }
 
   document.addEventListener("keydown", (e) => {

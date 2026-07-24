@@ -53,6 +53,7 @@ if (reducedMotion || !hasVendor) {
 
   // Buttery smooth scrolling; ScrollTrigger reads Lenis' position.
   const lenis = new Lenis({ lerp: 0.09 });
+  window.__lenis = lenis; // exposed so terminal.js can pause page scroll while open
   lenis.on("scroll", ScrollTrigger.update);
   gsap.ticker.add((time) => lenis.raf(time * 1000));
   gsap.ticker.lagSmoothing(0);
