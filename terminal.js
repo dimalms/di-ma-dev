@@ -117,7 +117,6 @@
       row("language", esc(lang)) +
       row("timezone", `${esc(tz)} · local time ${time}`) +
       row("screen", screen_) +
-      row("vpn", "can't tell from here — that's network-layer info, browser JS has no visibility into it") +
       row(
         "automation",
         anomalies.length
